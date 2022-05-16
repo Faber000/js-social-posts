@@ -93,6 +93,7 @@ for(let i=0; i < posts.length; i++) {
 }
 
 const buttons = document.getElementsByClassName('js-like-button');
+let likes = [];
 
 for(let i=0; i < posts.length; i++) {
     buttons[i].addEventListener('click', 
@@ -103,6 +104,7 @@ for(let i=0; i < posts.length; i++) {
             for(let j=0; j < posts.length; j++) {
                 counters[j].innerText = posts[j].likes;
             }
+            likes.push(posts[i].id);
         
     }) 
 }

@@ -91,3 +91,18 @@ for(let i=0; i < posts.length; i++) {
 
     container.innerHTML += post; 
 }
+
+const buttons = document.getElementsByClassName('js-like-button');
+
+for(let i=0; i < posts.length; i++) {
+    buttons[i].addEventListener('click', 
+        function() {
+            buttons[i].classList.add("clicked");
+            posts[i].likes = posts[i].likes +1;
+            const counters = document.getElementsByClassName("js-likes-counter");
+            for(let j=0; j < posts.length; j++) {
+                counters[j].innerText = posts[j].likes;
+            }
+        
+    }) 
+}
